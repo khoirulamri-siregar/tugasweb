@@ -3,124 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio [Nama Anda]</title>
+    <title>Kasrtenn - Bug Hunter & Security Researcher</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1><a href="#">[Nama Anda]</a></h1>
+            <div class="logo">Kasrtenn</div>
             <nav>
-                <ul>
-                    <li><a href="#hero">Beranda</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#portfolio">Portofolio</a></li>
-                    <li><a href="sertifikasi.html">Sertifikasi</a></li>
-                    <li><a href="#contact">Kontak</a></li>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        
-        <section id="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <p class="greeting">Halo, saya</p>
-                    <h2>[Nama Lengkap Anda]</h2>
-                    <p class="tagline">[Profesi Anda] Berbasis di [Kota, Negara]</p>
-                    <p class="description">
-                        Saya seorang [profesi] yang berfokus pada [spesialisasi]. Saya berdedikasi untuk menciptakan karya yang tidak hanya indah secara visual, tetapi juga berfungsi secara optimal.
+        <section id="hero" class="terminal-section">
+            <div class="container">
+                <div class="terminal-box">
+                    <pre><code class="typing-effect">
+> whois kasrtenn
+
+> Name: Khoirul Amri Siregar
+> Alias: Kasrtenn
+> Role: Bug Hunter & Security Researcher
+> Location: Unknown
+> Status: Active
+                    </code></pre>
+                </div>
+                <div class="hero-intro">
+                    <h1>KHOIRUL AMRI SIREGAR</h1>
+                    <p class="role">BUG HUNTER & ETHICAL HACKING ENTHUSIAST</p>
+                    <p class="specialization">
+                        Specializing in identifying vulnerabilities and strengthening digital security through ethical hacking practices and penetration testing.
                     </p>
-                    <a href="#contact" class="btn-primary">Hubungi Saya</a>
-                    <a href="#portfolio" class="btn-secondary">Lihat Karya</a>
-                </div>
-                <div class="hero-image">
-                    <img src="https://via.placeholder.com/250" alt="Foto Profil [Nama Anda]">
-                </div>
-            </div>
-        </section>
-
-        <section id="stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3>10+</h3>
-                        <p>Sertifikat Apresiasi</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>[Jumlah]</h3>
-                        <p>Proyek Selesai</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>[Jumlah]</h3>
-                        <p>Tahun Pengalaman</p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn">View My Work</a>
+                        <a href="#contact" class="btn">Get In Touch</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about">
+        <section id="about" class="terminal-section scroll-animate">
             <div class="container">
-                <h3>Tentang Saya</h3>
-                <p class="about-description">
-                    [Ceritakan tentang perjalanan karir dan keahlian Anda di sini. Jelaskan nilai yang Anda bawa ke setiap proyek. Contoh: "Dengan pengalaman lebih dari [Jumlah] tahun, saya telah mengasah keterampilan di bidang [Keahlian 1], [Keahlian 2], dan [Keahlian 3]. Saya percaya bahwa kombinasi antara kreativitas dan metodologi yang kuat adalah kunci untuk menghasilkan solusi yang berdampak."]
+                <h2>About Me</h2>
+                <p>
+                    Since discovering bug bounty programs and seeing how individuals can directly contribute to digital security legally, I, **Khoirul Amri Siregar (Kasrtenn)**, began my journey into ethical hacking at the age of 14. For over a year, I have been self-taught, utilizing platforms like Termux and Kali Linux, as well as various pentesting tools to hone my skills in finding and analyzing vulnerabilities.
                 </p>
+                <p>
+                    I aspire to become a recognized professional pentester, contributing to cybersecurity, and continuously developing my capacity as a security researcher. My vision is to become a trusted figure in the cybersecurity community, with a strong reputation based on findings and tangible contributions.
+                </p>
+                <div class="achievements">
+                    <h3>Early Achievements</h3>
+                    <div class="achievement-item">
+                        <h4>Active Learning Experience:</h4>
+                        <p>Over 1 year of focused and in-depth study in ethical hacking.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h4>Tangible Contributions:</h4>
+                        <p>Discovered and reported several vulnerabilities on government and corporate websites, some of which received appreciation or official certificates.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h4>Innovation & Development:</h4>
+                        <p>Actively developing automation scripts for pentesting needs using Python, with several personal projects on GitHub.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="terminal-section scroll-animate">
+            <div class="container">
+                <h2>Skills & Knowledge</h2>
                 <div class="skills-grid">
-                    <div class="skill-item">[Keahlian 1]</div>
-                    <div class="skill-item">[Keahlian 2]</div>
-                    <div class="skill-item">[Keahlian 3]</div>
-                    <div class="skill-item">[Keahlian 4]</div>
+                    <div class="skills-category">
+                        <h3>Security Concepts</h3>
+                        <ul>
+                            <li>OWASP Top 10</li>
+                            <li>Reconnaissance & Enumeration</li>
+                            <li>Exploitation & Post-Exploitation</li>
+                            <li>SQL Injection</li>
+                            <li>XSS (Cross-Site Scripting)</li>
+                            <li>LFI/RFI</li>
+                            <li>IDOR</li>
+                            <li>RCE</li>
+                            <li>Information Disclosure</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Tools Mastery</h3>
+                        <ul>
+                            <li>Nmap</li>
+                            <li>HTTPX</li>
+                            <li>Subfinder</li>
+                            <li>Katana</li>
+                            <li>Nuclei</li>
+                            <li>Burp Suite</li>
+                            <li>SQLMap</li>
+                            <li>Dirsearch</li>
+                            <li>WhatWeb</li>
+                            <li>Nikto</li>
+                            <li>Wfuzz</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Languages & Systems</h3>
+                        <ul>
+                            <li>Python (Automation)</li>
+                            <li>Bash Scripting</li>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>Kali Linux</li>
+                            <li>Termux (Android)</li>
+                            <li>Linux Debian/Ubuntu</li>
+                            <li>Networking (TCP/IP, HTTP, DNS)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio">
+        <section id="certificates" class="terminal-section scroll-animate">
             <div class="container">
-                <h3>Karya Pilihan</h3>
-                <div class="grid-portofolio">
-                    <div class="item">
-                        <img src="https://via.placeholder.com/400x300" alt="Proyek 1">
-                        <div class="item-info">
-                            <h4>Proyek 1</h4>
-                            <p>Deskripsi singkat proyek</p>
-                            <a href="#" class="view-project-btn">Lihat Proyek</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="https://via.placeholder.com/400x300" alt="Proyek 2">
-                        <div class="item-info">
-                            <h4>Proyek 2</h4>
-                            <p>Deskripsi singkat proyek</p>
-                            <a href="#" class="view-project-btn">Lihat Proyek</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <h3>Mari Berkolaborasi!</h3>
-                <p class="contact-text">
-                    Tertarik untuk berdiskusi tentang proyek Anda? Jangan ragu untuk menghubungi saya!
+                <h2>Appreciation Certificates</h2>
+                <p class="certs-intro">
+                    I am proud to have received official appreciation from various government agencies for active contributions in finding and reporting cybersecurity vulnerabilities.
                 </p>
-                <div class="contact-links">
-                    <a href="mailto:email@contoh.com" class="btn-primary">Kirim Email</a>
-                    <a href="https://linkedin.com/in/namaanda" target="_blank" class="btn-secondary">LinkedIn</a>
+                <div class="cert-previews-grid">
+                    <div class="cert-item">
+                        <p>Appreciation for Vulnerability Assessment activities on the Gunungkidul Regency Electronic System.</p>
+                        <p class="cert-date">(April 22, 2025)</p>
+                    </div>
+                    <div class="cert-item">
+                        <p>Diskominfo DIY appreciation for finding Directory Listing and Error Log Exposed.</p>
+                        <p class="cert-date">(June 11, 2025)</p>
+                    </div>
+                    <div class="cert-item">
+                        <p>KPI Central appreciation related to Detection of Security Vulnerabilities in their Application Services.</p>
+                        <p class="cert-date">(June 11, 2025)</p>
+                    </div>
                 </div>
+                <div class="btn-group">
+                    <a href="sertifikasi.html" class="btn">View All Certificates</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="terminal-section scroll-animate">
+            <div class="container">
+                <h2>Portfolio & Achievements</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <h3>Government Website Security Audit</h3>
+                        <p>
+                            Performed web pentesting and identified critical vulnerabilities in login endpoints and application configuration, leading to official appreciation from relevant agencies.
+                        </p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>Reconnaissance Script Development</h3>
+                        <p>
+                            Built CLI-based reconnaissance tools using Python and Bash for Termux/Kali Linux, integrating various tools for bug hunting efficiency.
+                        </p>
+                        <a href="#" class="btn btn-secondary">View on GitHub</a>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>Manual Vulnerability Analysis of Private Sites</h3>
+                        <p>
+                            Identified and ethically exploited XSS vulnerabilities on private websites using Burp Suite and manual payloads.
+                        </p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="terminal-section scroll-animate">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p class="contact-text">
+                    Interested in collaborating or have questions? Feel free to contact me!
+                </p>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 [Nama Anda]. All Rights Reserved.</p>
+            <p>© 2025 Khoirul Amri Siregar. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
