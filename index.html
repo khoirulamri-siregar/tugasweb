@@ -3,150 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasrtenn - Bug Hunter & Security Researcher</title>
+    <meta name="description" content="Kasrtenn - Professional Bug Hunter & Security Researcher dengan pengalaman menemukan kerentanan di situs pemerintah dan perusahaan">
+    <meta name="keywords" content="bug hunter, security researcher, etical hacking, penetration testing, cybersecurity">
+    <title>Kasrtenn - Professional Bug Hunter & Security Researcher</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-
-    <div class="container">
-        <header class="grid-item header" id="home">
-            <h1 class="logo">KASRTENN</h1>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <section id="about" class="grid-item about">
-            <h2>Tentang Saya</h2>
-            <p>Sejak menemukan program bug bounty dan melihat bagaimana individu dapat berkontribusi langsung pada keamanan digital secara legal, saya, Khoirul Amri Siregar (Kasrtenn), memulai perjalanan saya ke dunia etis hacking pada usia 14 tahun. Selama lebih dari satu tahun, saya telah belajar secara otodidak, memanfaatkan platform seperti Termux dan Kali Linux, serta berbagai tools pentesting untuk mengasah kemampuan saya dalam menemukan dan menganalisis kerentanan.</p>
-            <h3>Pencapaian Awal</h3>
-            <ul>
-                <li>**Pengalaman Belajar Aktif:** Lebih dari 1 tahun fokus dan mendalam dalam studi etis hacking.</li>
-                <li>**Kontribusi Nyata:** Menemukan dan melaporkan beberapa kerentanan pada situs web pemerintah dan perusahaan, beberapa di antaranya menerima apresiasi atau sertifikat resmi.</li>
-                <li>**Inovasi & Pengembangan:** Aktif mengembangkan skrip otomatisasi untuk kebutuhan pentesting menggunakan Python, dengan beberapa proyek pribadi di GitHub.</li>
-            </ul>
-        </section>
-
-        <section class="grid-item skills-group" id="skills">
-            <div class="skill-category">
-                <h2>Keahlian</h2>
-                <ul>
-                    <li>OWASP Top 10</li>
-                    <li>Reconnaissance & Enumeration</li>
-                    <li>Exploitation & Post-Exploitation</li>
-                    <li>SQL Injection</li>
-                    <li>XSS (Cross-Site Scripting)</li>
-                    <li>LFI/RFI</li>
-                    <li>IDOR</li>
-                    <li>RCE</li>
-                    <li>Information Disclosure</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h2>Tools</h2>
-                <ul>
-                    <li>Nmap</li>
-                    <li>HTTPX</li>
-                    <li>Subfinder</li>
-                    <li>Katana</li>
-                    <li>Nuclei</li>
-                    <li>Burp Suite</li>
-                    <li>SQLMap</li>
-                    <li>Dirsearch</li>
-                    <li>WhatWeb</li>
-                    <li>Nikto</li>
-                    <li>Wfuzz</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h2>Bahasa & Sistem</h2>
-                <ul>
-                    <li>Python (Automation)</li>
-                    <li>Bash Scripting</li>
-                    <li>HTML, CSS, JavaScript</li>
-                    <li>Kali Linux</li>
-                    <li>Termux (Android)</li>
-                    <li>Linux Debian/Ubuntu</li>
-                    <li>Networking (TCP/IP, HTTP, DNS)</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="certificates" class="grid-item certificates">
-            <h2>Sertifikat Apresiasi</h2>
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track">
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_KEMENAG" alt="Sertifikat Kemenag">
-                        <p>Apresiasi dari Kementerian Agama</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_KPI" alt="Sertifikat KPI">
-                        <p>Apresiasi dari KPI Pusat</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_BMKG" alt="Sertifikat BMKG">
-                        <p>Apresiasi dari BMKG</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_SULTENGPROV" alt="Sertifikat SultengProv">
-                        <p>Apresiasi dari Provinsi Sulawesi Tengah</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_JOGJAPROV" alt="Sertifikat JogjaProv">
-                        <p>Apresiasi dari Provinsi Daerah Istimewa Yogyakarta</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_JAKARTAPROV" alt="Sertifikat JakartaProv">
-                        <p>Apresiasi dari Pemerintah Provinsi DKI Jakarta</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_JOMBANGKAB" alt="Sertifikat JombangKab">
-                        <p>Apresiasi dari Pemerintah Kabupaten Jombang</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_BANTULKAB" alt="Sertifikat BantulKab">
-                        <p>Apresiasi dari Pemerintah Kabupaten Bantul</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_GUNUNGKIDULKAB" alt="Sertifikat GunungkidulKab">
-                        <p>Apresiasi dari Pemerintah Kabupaten Gunungkidul</p>
-                    </div>
-                    <div class="certificate-item">
-                        <img src="URL_SERTIFIKAT_JOGJAKITA" alt="Sertifikat JogjaKita">
-                        <p>Apresiasi dari Jogjakita</p>
-                    </div>
-                </div>
-                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <footer id="contact" class="grid-item contact">
-            <h2>Hubungi Saya</h2>
-            <p>Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya!</p>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Nama:">
-                <input type="email" name="email" placeholder="Email:">
-                <textarea name="message" placeholder="Pesan:"></textarea>
-                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-            </form>
-            <div class="social-links">
-                <a href="https://github.com/kasrtenn" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/khoirul-siregar" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:emailkamu@example.com"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p class="copyright">&copy; 2025 Khoirul Amri Siregar. All rights reserved.</p>
-        </footer>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <p>Initializing Security Environment...</p>
     </div>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">KASRTENN</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="nav-close" id="navClose">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-down" data-aos-delay="200">
+                <span class="gradient-text">Security Researcher</span> &<br>
+                <span class="gradient-text">Bug Bounty Hunter</span>
+            </h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                Mengungkap kerentanan, memperkuat pertahanan digital. 
+                Spesialis dalam identifikasi dan remediasi kerentanan keamanan.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="cyber-card" data-aos="fade-left" data-aos-delay="800">
+                <div class="card-content">
+                    <div class="hacker-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security First</h3>
+                    <p>Melindungi sistem dengan menemukan kerentanan sebelum dieksploitasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p>Sejak menemukan program bug bounty dan melihat bagaimana individu dapat berkontribusi langsung pada keamanan digital secara legal, saya, Khoirul Amri Siregar (Kasrtenn), memulai perjalanan saya ke dunia etis hacking pada usia 14 tahun. Selama lebih dari satu tahun, saya telah belajar secara otodidak, memanfaatkan platform seperti Termux dan Kali Linux, serta berbagai tools pentesting untuk mengasah kemampuan saya dalam menemukan dan menganalisis kerentanan.</p>
+                    
+                    <h3>Pencapaian Awal</h3>
+                    <div class="achievements">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Pengalaman Belajar Aktif</h4>
+                                <p>Lebih dari 1 tahun fokus dan mendalam dalam studi etis hacking.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Kontribusi Nyata</h4>
+                                <p>Menemukan dan melaporkan beberapa kerentanan pada situs web pemerintah dan perusahaan.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Inovasi & Pengembangan</h4>
+                                <p>Aktif mengembangkan skrip otomatisasi untuk kebutuhan pentesting menggunakan Python.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Keahlian Teknis</h2>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <i class="fas fa-bug"></i>
+                        <h3>Vulnerability Knowledge</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>OWASP Top 10</li>
+                        <li>SQL Injection</li>
+                        <li>XSS (Cross-Site Scripting)</li>
+                        <li>LFI/RFI</li>
+                        <li>IDOR</li>
+                        <li>RCE</li>
+                        <li>Information Disclosure</li>
+                        <li>Reconnaissance & Enumeration</li>
+                        <li>Exploitation & Post-Exploitation</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Nmap</li>
+                        <li>HTTPX</li>
+                        <li>Subfinder</li>
+                        <li>Katana</li>
+                        <li>Nuclei</li>
+                        <li>Burp Suite</li>
+                        <li>SQLMap</li>
+                        <li>Dirsearch</li>
+                        <li>WhatWeb</li>
+                        <li>Nikto</li>
+                        <li>Wfuzz</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Languages & Systems</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Python (Automation)</li>
+                        <li>Bash Scripting</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Kali Linux</li>
+                        <li>Termux (Android)</li>
+                        <li>Linux Debian/Ubuntu</li>
+                        <li>Networking (TCP/IP, HTTP, DNS)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Sertifikat Apresiasi</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Pengakuan dari berbagai institusi pemerintah dan organisasi</p>
+            
+            <div class="carousel-container" data-aos="fade-up" data-aos-delay="200">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="carousel-track">
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <h3>Kementerian Agama</h3>
+                                <p>Apresiasi atas temuan kerentanan keamanan</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <h3>KPI Pusat</h3>
+                                <p>Apresiasi atas temuan kerentanan keamanan</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Repeat for other certificates -->
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <h3>BMKG</h3>
+                                <p>Apresiasi atas temuan kerentanan keamanan</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <h3>Provinsi Sulawesi Tengah</h3>
+                                <p>Apresiasi atas temuan kerentanan keamanan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Hubungi Saya</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya!</p>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>emailkamu@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <p>github.com/kasrtenn</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/khoirul-siregar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" data-aos="fade-left" data-aos-delay="300">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder Alamat Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Pesan Anda" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>KASRTENN</h2>
+                    <p>Security Researcher & Bug Bounty Hunter</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#certificates">Certificates</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/kasrtenn" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/khoirul-siregar" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:emailkamu@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Khoirul Amri Siregar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>
