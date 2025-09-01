@@ -1,43 +1,54 @@
-/* Color Palette & Typography */
+/* Universal Styles & Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --bg-light: #ffffff;
     --text-dark: #333333;
     --accent-gold: #b38e4a;
     --gray-light: #f5f5f5;
     --font-sans: 'Roboto', sans-serif;
+    --transition-duration: 0.8s;
 }
 
-body {
-    margin: 0;
-    overflow: hidden;
+body, html {
     font-family: var(--font-sans);
     background-color: var(--bg-light);
     color: var(--text-dark);
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow: hidden; /* Mencegah scrollbar default browser */
 }
 
-/* Container & Page Transition */
-.container {
+/* Main Wrapper and Content Container for Morph Effect */
+#wrapper {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.8s ease-in-out; /* Smooth vertical transition */
+    overflow: hidden;
 }
 
+#content-container {
+    width: 100%;
+    height: 100%;
+    transition: transform var(--transition-duration) cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+/* Page Section */
 .page {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
-    box-sizing: border-box;
     flex-shrink: 0;
 }
 
-/* Page Specific Backgrounds for visual separation */
+/* Backgrounds for each section */
 #home { background-color: var(--bg-light); }
 #about { background-color: var(--gray-light); }
 #skills { background-color: var(--bg-light); }
@@ -45,55 +56,32 @@ body {
 #portfolio { background-color: var(--bg-light); }
 #contact { background-color: var(--gray-light); }
 
-/* Typography */
-.main-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--text-dark);
-    letter-spacing: 2px;
+/* Content Animation & Layout */
+.content-wrapper {
+    max-width: 900px;
+    opacity: 0; /* Semua konten disembunyikan di awal */
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-.subtitle {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #666;
-    margin-bottom: 30px;
+/* Animasi saat halaman aktif */
+.page.active .content-wrapper {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-h2 {
-    font-size: 2.5rem;
-    color: var(--accent-gold);
-    border-bottom: 2px solid var(--accent-gold);
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-}
-
-h3 {
-    font-size: 1.5rem;
-    color: var(--text-dark);
-}
-
-p, li {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-}
-.content-text {
-    max-width: 800px;
-    text-align: left;
-}
-.content-text ul {
-    margin-top: 15px;
-    list-style: none;
-    padding-left: 0;
-}
-.content-text li {
-    margin-bottom: 8px;
-}
+/* Typography & Elements */
+h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; margin-bottom: 10px; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px; margin-bottom: 25px; }
+h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); color: var(--text-dark); }
+p, li { font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.6; color: #555; }
+.text-block { text-align: left; }
+.text-block p { margin-bottom: 15px; }
+ul { list-style: none; padding-left: 0; text-align: left; }
+li { margin-bottom: 8px; }
 
 /* Buttons */
-.btn, .btn-more, .btn-details, .btn-submit {
+.btn, .btn-more, .btn-details {
     background-color: transparent;
     border: 2px solid var(--text-dark);
     color: var(--text-dark);
@@ -104,48 +92,42 @@ p, li {
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    display: inline-block;
 }
-
-.btn:hover, .btn-more:hover, .btn-details:hover, .btn-submit:hover {
+.btn:hover, .btn-more:hover, .btn-details:hover {
     background-color: var(--text-dark);
     color: var(--bg-light);
 }
 
-/* Layouts */
-.intro-buttons {
-    margin-top: 20px;
-}
-
+/* Grid Layouts for Responsiveness */
 .skills-grid, .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
-    max-width: 900px;
-    margin-top: 20px;
+    width: 100%;
 }
 
 .skill-category, .portfolio-item {
+    background-color: var(--bg-light);
     padding: 25px;
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--bg-light);
 }
-
 .portfolio-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 500px;
     width: 100%;
+    max-width: 500px;
 }
-
 .contact-form input, .contact-form textarea {
     border: 1px solid #ccc;
     padding: 12px;
@@ -157,13 +139,16 @@ p, li {
     outline: none;
     transition: border-color 0.3s;
 }
-
 .contact-form input:focus, .contact-form textarea:focus {
     border-color: var(--accent-gold);
 }
+.btn-submit { width: 100%; }
+.footer-text { margin-top: 40px; font-size: 0.8rem; color: #999; }
 
-.footer-text {
-    margin-top: 40px;
-    font-size: 0.8rem;
-    color: #999;
+/* Media Queries for better responsiveness on small screens */
+@media (max-width: 768px) {
+    .content-wrapper { padding: 0 15px; }
+    .intro-buttons { flex-direction: column; }
+    .skills-grid, .portfolio-grid { gap: 20px; }
+    .skill-category, .portfolio-item { padding: 20px; }
 }
