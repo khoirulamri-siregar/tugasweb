@@ -1,31 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container');
+    const wrapper = document.getElementById('wrapper');
+    const contentContainer = document.getElementById('content-container');
     const pages = document.querySelectorAll('.page');
     let currentPageIndex = 0;
-    let isTransitioning = false; // Flag to prevent multiple scrolls during transition
+    let isTransitioning = false;
 
-    // Function to navigate to a specific page
+    // Set the first page as active initially
+    pages[currentPageIndex].classList.add('active');
+
     function goToPage(index) {
-        // Prevent navigation if already transitioning or index is out of bounds
         if (isTransitioning || index < 0 || index >= pages.length) {
             return;
         }
+        isTransitioning = true;
 
-        isTransitioning = true; // Set flag to true
-
-        // Calculate the translateY value to move the container
-        container.style.transform = `translateY(${-index * 100}vh)`;
+        // Remove active class from current page
+        pages[currentPageIndex].classList.remove('active');
+        
         currentPageIndex = index;
+        
+        // Move the content container
+        contentContainer.style.transform = `translateY(${-currentPageIndex * 100}vh)`;
 
-        // Reset the transition flag after the CSS transition completes
-        // The timeout duration should match the CSS transition duration (0.8s = 800ms)
+        // Add active class to the new page after a short delay to allow transition
         setTimeout(() => {
+            pages[currentPageIndex].classList.add('active');
             isTransitioning = false;
-        }, 800);
+        }, 800); // Harus sama dengan waktu transisi CSS
     }
 
-    // Event listener for mouse wheel (scroll)
+    // Event listener for mouse wheel
+    let lastScrollTime = 0;
     window.addEventListener('wheel', (event) => {
+        const currentTime = new Date().getTime();
+        if (currentTime - lastScrollTime < 500) { // Throttle scroll events
+            return;
+        }
+        lastScrollTime = currentTime;
+
         if (event.deltaY > 0) { // Scrolling down
             goToPage(currentPageIndex + 1);
         } else { // Scrolling up
@@ -33,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Optional: Keyboard navigation with arrow keys
+    // Event listener for keyboard navigation
     document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowDown') {
             goToPage(currentPageIndex + 1);
@@ -42,33 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Typing Effect for Home Page H1 ---
-    const homeH1 = document.querySelector('#home h1.typing-effect');
-    if (homeH1) {
-        const originalText = homeH1.textContent;
-        homeH1.textContent = ''; // Clear initial text
-        let charIndex = 0;
-
-        function typeEffect() {
-            if (charIndex < originalText.length) {
-                homeH1.textContent += originalText.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeEffect, 90); // Typing speed in ms
-            } else {
-                homeH1.style.borderRight = 'none'; // Remove cursor after typing
-            }
-        }
-        setTimeout(typeEffect, 500); // Start typing after a short delay
-    }
-
-    // --- Smooth scroll for anchor links (e.g., "View My Work", "Get In Touch") ---
+    // Event listener for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-
             if (targetElement) {
                 const targetIndex = Array.from(pages).indexOf(targetElement);
                 goToPage(targetIndex);
