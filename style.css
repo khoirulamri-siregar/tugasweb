@@ -1,42 +1,45 @@
-/* Universal Styles & Base Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* --- Global Styles & Variables --- */
 :root {
     --bg-light: #ffffff;
     --text-dark: #333333;
     --accent-gold: #b38e4a;
     --gray-light: #f5f5f5;
+    --gray-medium: #e0e0e0;
     --font-sans: 'Roboto', sans-serif;
-    --transition-duration: 0.8s;
+    --transition-duration: 0.9s;
 }
 
-body, html {
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     font-family: var(--font-sans);
     background-color: var(--bg-light);
     color: var(--text-dark);
-    scroll-behavior: smooth;
-    height: 100%;
-    overflow: hidden; /* Mencegah scrollbar default browser */
+    height: 100vh;
+    overflow: hidden; /* Prevent native scrolling */
 }
 
-/* Main Wrapper and Content Container for Morph Effect */
-#wrapper {
+/* --- Page & Content Container --- */
+#page-wrapper {
+    position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
 
 #content-container {
-    width: 100%;
     height: 100%;
     transition: transform var(--transition-duration) cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-/* Page Section */
 .page {
     width: 100vw;
     height: 100vh;
@@ -48,29 +51,59 @@ body, html {
     flex-shrink: 0;
 }
 
-/* Backgrounds for each section */
 #home { background-color: var(--bg-light); }
 #about { background-color: var(--gray-light); }
 #skills { background-color: var(--bg-light); }
 #certificates { background-color: var(--gray-light); }
-#portfolio { background-color: var(--bg-light); }
-#contact { background-color: var(--gray-light); }
+#portfolio { background-color: var(--gray-light); }
+#contact { background-color: var(--bg-light); }
 
-/* Content Animation & Layout */
-.content-wrapper {
+/* --- Sidebar Navigation --- */
+#sidebar-nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+#sidebar-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#sidebar-nav a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--gray-medium);
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: background-color 0.3s;
+}
+
+#sidebar-nav a:hover,
+#sidebar-nav a.active {
+    background-color: var(--accent-gold);
+}
+
+/* --- Content Animation --- */
+.content-box {
     max-width: 900px;
-    opacity: 0; /* Semua konten disembunyikan di awal */
+    padding: 20px;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* Animasi saat halaman aktif */
-.page.active .content-wrapper {
+.page.active .content-box {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Typography & Elements */
+/* --- Typography & Elements --- */
 h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; margin-bottom: 10px; }
 h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px; margin-bottom: 25px; }
 h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); color: var(--text-dark); }
@@ -81,7 +114,7 @@ ul { list-style: none; padding-left: 0; text-align: left; }
 li { margin-bottom: 8px; }
 
 /* Buttons */
-.btn, .btn-more, .btn-details {
+.btn {
     background-color: transparent;
     border: 2px solid var(--text-dark);
     color: var(--text-dark);
@@ -94,12 +127,13 @@ li { margin-bottom: 8px; }
     text-transform: uppercase;
     display: inline-block;
 }
+
 .btn:hover, .btn-more:hover, .btn-details:hover {
     background-color: var(--text-dark);
     color: var(--bg-light);
 }
 
-/* Grid Layouts for Responsiveness */
+/* Grid Layouts */
 .skills-grid, .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -110,14 +144,10 @@ li { margin-bottom: 8px; }
 .skill-category, .portfolio-item {
     background-color: var(--bg-light);
     padding: 25px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--gray-medium);
     border-radius: 8px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Form */
@@ -129,7 +159,7 @@ li { margin-bottom: 8px; }
     max-width: 500px;
 }
 .contact-form input, .contact-form textarea {
-    border: 1px solid #ccc;
+    border: 1px solid var(--gray-medium);
     padding: 12px;
     font-family: var(--font-sans);
     font-size: 1rem;
@@ -145,10 +175,17 @@ li { margin-bottom: 8px; }
 .btn-submit { width: 100%; }
 .footer-text { margin-top: 40px; font-size: 0.8rem; color: #999; }
 
-/* Media Queries for better responsiveness on small screens */
+/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    .content-wrapper { padding: 0 15px; }
-    .intro-buttons { flex-direction: column; }
-    .skills-grid, .portfolio-grid { gap: 20px; }
-    .skill-category, .portfolio-item { padding: 20px; }
+    #sidebar-nav {
+        display: none; /* Hide sidebar on small screens */
+    }
+
+    .content-box {
+        padding: 0 15px;
+    }
+    
+    .intro-buttons {
+        flex-direction: column;
+    }
 }
