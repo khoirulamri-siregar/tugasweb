@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasrtenn | Bug Hunter & Security Researcher</title>
+    <title>Kasrtenn | Portofolio Profesional</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="wrapper">
+    <div id="page-wrapper">
+        <nav id="sidebar-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
         <div id="content-container">
             <section class="page" id="home">
-                <div class="content-wrapper">
-                    <h1 class="main-title">KHOIRUL AMRI SIREGAR</h1>
-                    <p class="subtitle">BUG HUNTER & ETHICAL HACKING ENTHUSIAST</p>
-                    <div class="intro-buttons">
+                <div class="content-box">
+                    <h1 class="element-animated main-title">KHOIRUL AMRI SIREGAR</h1>
+                    <p class="element-animated subtitle">BUG HUNTER & ETHICAL HACKING ENTHUSIAST</p>
+                    <div class="element-animated intro-buttons">
                         <a href="#portfolio" class="btn">View My Work</a>
                         <a href="#contact" class="btn">Get In Touch</a>
                     </div>
@@ -24,25 +35,25 @@
             </section>
     
             <section class="page" id="about">
-                <div class="content-wrapper">
-                    <h2>About Me</h2>
-                    <div class="text-block">
-                        <p>Since discovering bug bounty programs and seeing how individuals can directly contribute to digital security legally, I, <strong>Khoirul Amri Siregar (Kasrtenn)</strong>, began my journey into ethical hacking at the age of 14...</p>
-                        <p>I aspire to become a recognized professional pentester, contributing to cybersecurity, and continuously developing my capacity as a security researcher...</p>
+                <div class="content-box">
+                    <h2 class="element-animated">About Me</h2>
+                    <div class="element-animated text-block">
+                        <p>Since discovering bug bounty programs and seeing how individuals can directly contribute to digital security legally, I, <strong>Khoirul Amri Siregar (Kasrtenn)</strong>, began my journey into ethical hacking at the age of 14.</p>
+                        <p>I aspire to become a recognized professional pentester, contributing to cybersecurity, and continuously developing my capacity as a security researcher. My vision is to become a trusted figure in the cybersecurity community, with a strong reputation based on findings and tangible contributions.</p>
                     </div>
-                    <h3>Early Achievements:</h3>
-                    <ul>
-                        <li><strong>Active Learning Experience:</strong> Over 1 year of focused and in-depth study...</li>
-                        <li><strong>Tangible Contributions:</strong> Discovered and reported several vulnerabilities...</li>
-                        <li><strong>Innovation & Development:</strong> Actively developing automation scripts...</li>
+                    <h3 class="element-animated">Early Achievements:</h3>
+                    <ul class="element-animated achievement-list">
+                        <li><strong>Active Learning Experience:</strong> Over 1 year of focused and in-depth study in ethical hacking.</li>
+                        <li><strong>Tangible Contributions:</strong> Discovered and reported several vulnerabilities on government and corporate websites, some of which received appreciation or official certificates.</li>
+                        <li><strong>Innovation & Development:</strong> Actively developing automation scripts for pentesting needs using Python, with several personal projects on GitHub.</li>
                     </ul>
                 </div>
             </section>
     
             <section class="page" id="skills">
-                <div class="content-wrapper">
-                    <h2>Skills & Knowledge</h2>
-                    <div class="skills-grid">
+                <div class="content-box">
+                    <h2 class="element-animated">Skills & Knowledge</h2>
+                    <div class="element-animated skills-grid">
                         <div class="skill-category">
                             <h3>Security Concepts</h3>
                             <ul><li>OWASP Top 10</li><li>Reconnaissance & Enumeration</li><li>Exploitation & Post-Exploitation</li></ul>
@@ -60,25 +71,23 @@
             </section>
     
             <section class="page" id="certificates">
-                <div class="content-wrapper">
-                    <h2>Appreciation Certificates</h2>
-                    <div class="text-block">
-                        <p>I am proud to have received official appreciation from various government agencies...</p>
-                    </div>
-                    <div class="certificate-list">
+                <div class="content-box">
+                    <h2 class="element-animated">Appreciation Certificates</h2>
+                    <p class="element-animated">I am proud to have received official appreciation from various government agencies...</p>
+                    <div class="element-animated certificate-list">
                         <ul>
-                            <li>Appreciation for Vulnerability Assessment activities...</li>
-                            <li>Diskominfo DIY appreciation for finding...</li>
+                            <li>Appreciation for Vulnerability Assessment activities on the <strong>Gunungkidul Regency Electronic System</strong>. (Wonosari, 22 April 2025)</li>
+                            <li>Diskominfo DIY appreciation for finding <strong>Directory Listing and Error Log Exposed</strong> on their website. (Yogyakarta, 11 Juni 2025)</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn-more">View All Certificates</a>
+                    <a href="#" class="element-animated btn">View All Certificates</a>
                 </div>
             </section>
     
             <section class="page" id="portfolio">
-                <div class="content-wrapper">
-                    <h2>Portfolio & Achievements</h2>
-                    <div class="portfolio-grid">
+                <div class="content-box">
+                    <h2 class="element-animated">Portfolio & Achievements</h2>
+                    <div class="element-animated portfolio-grid">
                         <div class="portfolio-item">
                             <h3>Government Website Security Audit</h3>
                             <p>Performed web pentesting and identified critical vulnerabilities...</p>
@@ -86,7 +95,7 @@
                         </div>
                         <div class="portfolio-item">
                             <h3>Reconnaissance Script Development</h3>
-                            <p>Built CLI-based reconnaissance tools using Python...</p>
+                            <p>Built CLI-based reconnaissance tools using Python and Bash...</p>
                             <a href="https://github.com/your-username/your-repo" class="btn-details">View on GitHub</a>
                         </div>
                     </div>
@@ -94,22 +103,21 @@
             </section>
     
             <section class="page" id="contact">
-                <div class="content-wrapper">
-                    <h2>Contact Me</h2>
-                    <div class="text-block">
-                        <p>Interested in collaborating or have questions? Feel free to contact me!</p>
-                    </div>
-                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST" class="contact-form">
+                <div class="content-box">
+                    <h2 class="element-animated">Contact Me</h2>
+                    <p class="element-animated">Interested in collaborating or have questions? Feel free to contact me!</p>
+                    <form action="YOUR_FORM_SUBMISSION_URL" method="POST" class="element-animated contact-form">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         <button type="submit" class="btn-submit">Send Message</button>
                     </form>
-                    <p class="footer-text">© 2025 Khoirul Amri Siregar. All rights reserved.</p>
+                    <p class="element-animated footer-text">© 2025 Khoirul Amri Siregar. All rights reserved.</p>
                 </div>
             </section>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
