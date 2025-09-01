@@ -1,69 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const wrapper = document.getElementById('wrapper');
     const contentContainer = document.getElementById('content-container');
     const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('#sidebar-nav a');
     let currentPageIndex = 0;
     let isTransitioning = false;
+    let lastScrollTime = 0;
 
-    // Set the first page as active initially
+    // Initialize the first page as active
     pages[currentPageIndex].classList.add('active');
+    navLinks[currentPageIndex].classList.add('active');
 
-    function goToPage(index) {
-        if (isTransitioning || index < 0 || index >= pages.length) {
-            return;
-        }
+    // Function to navigate to a page
+    const goToPage = (index) => {
+        if (isTransitioning || index < 0 || index >= pages.length) return;
+
         isTransitioning = true;
-
-        // Remove active class from current page
+        
+        // Remove 'active' class from old page and nav link
         pages[currentPageIndex].classList.remove('active');
-        
+        navLinks[currentPageIndex].classList.remove('active');
+
+        // Update index and add 'active' class to new page and nav link
         currentPageIndex = index;
+        pages[currentPageIndex].classList.add('active');
+        navLinks[currentPageIndex].classList.add('active');
         
-        // Move the content container
+        // Transform the content container for morph effect
         contentContainer.style.transform = `translateY(${-currentPageIndex * 100}vh)`;
 
-        // Add active class to the new page after a short delay to allow transition
+        // Reset transition state after animation finishes
         setTimeout(() => {
-            pages[currentPageIndex].classList.add('active');
             isTransitioning = false;
-        }, 800); // Harus sama dengan waktu transisi CSS
-    }
+        }, 900); // Must match CSS transition duration
+    };
 
-    // Event listener for mouse wheel
-    let lastScrollTime = 0;
-    window.addEventListener('wheel', (event) => {
+    // Mouse wheel event listener with throttling
+    window.addEventListener('wheel', (e) => {
         const currentTime = new Date().getTime();
-        if (currentTime - lastScrollTime < 500) { // Throttle scroll events
-            return;
-        }
+        if (currentTime - lastScrollTime < 1000) return; // Throttle scroll
         lastScrollTime = currentTime;
 
-        if (event.deltaY > 0) { // Scrolling down
+        if (e.deltaY > 0) { // Scroll down
             goToPage(currentPageIndex + 1);
-        } else { // Scrolling up
+        } else { // Scroll up
             goToPage(currentPageIndex - 1);
         }
     });
 
-    // Event listener for keyboard navigation
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowDown') {
-            goToPage(currentPageIndex + 1);
-        } else if (event.key === 'ArrowUp') {
-            goToPage(currentPageIndex - 1);
-        }
-    });
-
-    // Event listener for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // Sidebar navigation event listener
+    navLinks.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                const targetIndex = Array.from(pages).indexOf(targetElement);
-                goToPage(targetIndex);
-            }
+            goToPage(index);
         });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') {
+            goToPage(currentPageIndex + 1);
+        } else if (e.key === 'ArrowUp') {
+            goToPage(currentPageIndex - 1);
+        }
     });
 });
